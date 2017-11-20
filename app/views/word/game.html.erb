@@ -1,0 +1,29 @@
+<h1>Word#game</h1>
+<p>Find me in app/views/word/game.html.erb</p>
+<h3>Bonjour</h3>
+
+<p>******** Welcome to the longest word-game!********</p>
+<p>Voici votre grille</p>
+
+
+
+<ul>
+<% @array.each do |letter| %>
+<li><%= letter %></li>
+<% end %>
+</ul>
+
+
+
+<!-- grid = generate_grid(9) -->
+<!--puts grid.join(" ") -->
+
+<p>*****************************************************</p>
+
+<form action="/score" method="get">
+  <label for="question">Votre proposition</label>
+  <input type="text" id="question" name="query" placeholder="entrez votre mot">
+  <input type="hidden" name="grid" value=<%= @array.join("")%> >
+  <input type="submit" value="Go on!">
+</form>
+
